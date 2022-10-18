@@ -2,5 +2,18 @@
 названия которых начинаются на заданную букву.
 а –> абрикос, авокадо, апельсин, айва. """
 
-#file = open("frukt.txt", "r", encoding='utf-8')
-#file.close()
+def Read_File():
+    file = open("HW3/HW3_2/frukt.txt", encoding='utf-8')
+    data = file.readlines()
+    file.close()
+    return data
+
+def Get_Frukt(data, liter):
+    df=[]
+    for i in range(len(data)):
+        if data[i][0].lower() == liter.lower():
+            df.append(data[i])
+    return df
+
+liter = input("введите первую букву: ")
+print(Get_Frukt(Read_File(), liter))
