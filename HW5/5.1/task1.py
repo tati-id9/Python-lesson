@@ -4,5 +4,5 @@ import random as r
 list = [r.randint(1, 11)]
 n = r.randint(0, 10)
 for i in range(1, n):
-    list.append(r.randint(1, 10))
+    list.append(r.randint(1, 11))
 print(f'список -> {list}')
