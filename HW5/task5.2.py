@@ -2,9 +2,7 @@
 # описывающие возрастающую последовательность. Порядок элементов менять нельзя.
 # [1, 5, 2, 3, 4, 6, 1, 7] => [1, 2, 3] или [1, 7] или [1, 6, 7] и т.д.
 
-import random as r
-def List_Rand():
-    return [r.randint(1,11) for i in range (r.randint(1,11))]
+import list_rr
 
 def Filter_Elements(numbers):
     list_result = [numbers[0]]
@@ -13,7 +11,7 @@ def Filter_Elements(numbers):
             list_result.append(element)
     return list_result
 
-list_numbers = List_Rand()
+list_numbers = list_rr.List_Rand()
 print(f'начальный список -> {list_numbers}')
 print(f'результат -> {Filter_Elements(list_numbers)}')
 

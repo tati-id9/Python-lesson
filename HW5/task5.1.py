@@ -3,12 +3,11 @@
 # 2, 3, 4, 6, 7, 8 -> 6, 7, 8
 
 
-import random as r
-
-list_numbers = [r.randint(1,11) for i in range (r.randint(1,11))]
-print(f'начальный список -> {list_numbers}')
+import list_rr
+list_numbers = list_rr.List_Rand()
 
 result = lambda x: x>5
 result = list(filter(result, list_numbers))
-print (f'список с элементами больше 5 ->{result}')
+print(f'начальный список -> {list_numbers}')
+print(f'список с элементами больше 5 ->{result}')
 

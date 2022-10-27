@@ -5,22 +5,22 @@
 # Список уникальных элементов
 # [1, 4, 2, 3, 6, 7]
 
-import random as r
-def List_Rand():
-    return [r.randint(1,11) for i in range (r.randint(1,11))]
+import list_rr
 
 def Quantity_Repeat_El(number):
     count = 0
     for i in range(len(number)):
-        for j in range (i+1, len(number)):
-            if number[i]==number[j]:
-                count+=1
+        if number.count(i) != 1:
+            count+=number.count(i)
     return count
 
-def Unique_El(numbers:list):
-    return list(filter(lambda x: numbers.count(x) == 1, numbers))
+def Unique_El(list):
+    for i in reversed(range(len(list))):
+        if list[i] in list[:i]:
+            del list[i]
+    return list
 
-list_numbers = List_Rand()
+list_numbers = list_rr.List_Rand()
 print(f'начальный список -> {list_numbers}')
 print(f'количество совпадающих элементов -> {Quantity_Repeat_El(list_numbers)}')
 print(f'список уникальных элементов -> {Unique_El(list_numbers)}')
