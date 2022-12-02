@@ -14,7 +14,7 @@ dictionary = \
 size = 5
 mas = [0] * size
 for i in range (size):
-    mas[i] = list(r.randint(1,15) for j in range(r.randint(10,11)))
+    mas[i] = list(r.randint(0,35) for j in range(r.randint(30,31)))
 
 mas2=[]
 max_ave=0
@@ -51,4 +51,4 @@ for i in range(0, len(mas)):
 print ('7 дневный промежуток')
 print (f'Начало промежутка - месяц: {dictionary[i_n]} (строка в матрице {i_n+1}), день: {j_n+1}')
 print (f'Конец промежутка - месяц: {dictionary[i_k]} (строка в матрице {i_k+1}), день: {j_k+1}')
-print (f'Максимальная средняя температура -> {max_ave}')
+print (f'Максимальная средняя температура -> {round(max_ave, 2)}')
