@@ -2,11 +2,19 @@
 # Каждому месяцу соответствует своя строка. 
 # Определите самый жаркий и самый холодный 7-дневный промежуток этого периода. Выведите его даты.
 import random as r
+dictionary = \
+    {
+        0: 'май',
+        1: 'июнь',
+        2: 'июль',
+        3: 'август',
+        4: 'сентябрь'
+    }
 
 size = 5
 mas = [0] * size
 for i in range (size):
-    mas[i] = list(r.randint(1,15) for j in range(size))
+    mas[i] = list(r.randint(1,15) for j in range(r.randint(10,11)))
 
 mas2=[]
 max_ave=0
@@ -16,11 +24,13 @@ i_k=0 #индекс по столбцу начала промежутка
 j_n=0 #индекс по строке конца промежутка
 j_k=0 #индекс по столбцу конца промежутка
 
+print("Матрица дней: ")
 for i in range(0, len(mas)):
     for i2 in range(0, len(mas[i])):
         print(mas[i][i2], end=' ')
     print()
 print()
+
 for i in range(0, len(mas)):
     for j in range(0, len(mas[i])):
         mas2.append(mas[i][j])
@@ -38,4 +48,7 @@ for i in range(0, len(mas)):
                     i_n=i
                     j_n=j-6
                     
-print ('7 дневный промежуток, начало - месяц:',i_n+1,'день:',j_n+1,'конец промежутка - месяц:',i_k+1,'день:',j_k+1, 'максимальная температура ->', max_ave)
+print ('7 дневный промежуток')
+print (f'Начало промежутка - месяц: {dictionary[i_n]} (строка в матрице {i_n+1}), день: {j_n+1}')
+print (f'Конец промежутка - месяц: {dictionary[i_k]} (строка в матрице {i_k+1}), день: {j_k+1}')
+print (f'Максимальная средняя температура -> {max_ave}')
