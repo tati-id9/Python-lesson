@@ -16,7 +16,7 @@ def Add_Contact():
         allContacts.insert(END, new_contact)
         Write_Contacts()
     else:
-        print("нет")
+        print("Не введены данные")
 
 def Write_Contacts():
     data = open('phonebook.txt', 'w', encoding='utf-8')
@@ -30,7 +30,7 @@ def Print_Contats():
         for contact in data.readlines():
             allContacts.insert(END, contact)
         data.close()
-    except FileExistsError:
+    except FileNotFoundError:
         print("Файл не найден. Создайте файл")
 
 def Search():
